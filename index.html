@@ -2,8 +2,10 @@
 <meta charset="utf-8">
 <title>Атака инопланетян</title>
 <link rel="stylesheet" href="SampleStyle.css">
-
+<section id="game">
 <div id="all">
+<h1>Атака Инопланетян</h1>
+
 <div id="stage">
 <div id="background"></div>
 <div id="cannon"></div>
@@ -15,6 +17,7 @@
 <input id="inputX" type="text" placeholder="X..." size = "10">
 <input id="inputY" type="text" placeholder="Y..." size = "10">
 <button>Огонь!</button>
+</section>
 <script>
 //Переменные игры
 var alienX = 80;
@@ -47,6 +50,25 @@ cannon.style.left = guessX + "px";
 //Позиция ракеты
 missile.style.left = guessX + "px";
 missile.style.top = guessY + "px";
+}
+window.addEventListener("keydown", keydownHandler, false);
+function keydownHandler(event)
+{
+if(event.keyCode === 13)
+{
+validateInput();
+}
+}
+function keydownHandler(event)
+{
+if(event.keyCode === 13)
+{
+validateInput();
+}
+}
+function clickHandler()
+{
+validateInput();
 }
 function clickHandler()
 {
@@ -95,6 +117,28 @@ alienY += 30;
 render(); console.log("X: " + alienX);
 console.log("Y: " + alienY);
 }
+
+function validateInput()
+{
+guessX = parseInt(inputX.value);
+guessY = parseInt(inputY.value);
+if(isNaN(guessX) || isNaN(guessY))
+{
+output.innerHTML = "Пожалуйста, введите число.";
+}
+else if(guessX > 280 || guessX < 0)
+{
+output.innerHTML = "Значение X должно быть от 0 до 280!";
+}
+else if(guessY > 250 || guessY < 0)
+{
+output.innerHTML = "Значение Y должно быть от 0 до 250!";
+}
+else
+{
+playGame();
+}
+}
 function endGame()
 {
 if(gameWon)
@@ -108,5 +152,10 @@ else
 output.innerHTML
 = "Вы проиграли!" + "<br>" + "Вторжение началось!";
 }
+button.removeEventListener("click", clickHandler, false);
+button.disabled = true;
+//Отключение клавиши Enter
+window.removeEventListener("keydown", keydownHandler, false);
+
 }
 </script>

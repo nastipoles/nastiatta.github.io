@@ -1,8 +1,34 @@
+*
+{
+font-family: Arial, Helvetica, sans-serif,;
+color: #008080;
+padding: 0px;
+margin: 0px;
+}
+p { color: #008080 /* Цвет текста */ } 
+
+#game
+{
+margin: 0px auto;
+top: 150px;
+width: 330px;
+height: auto;
+padding: 15px;
+border: black;
+background:-webkit-linear-gradient(top, #000080, #000);
+background:-moz-linear-gradient(top, #588063, #000);
+background: linear-gradient(top, #588063, #000);
+-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+-moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+border-radius: 10px;
+}
 #stage
 {
+margin: 0px auto;
 width: 300px;
 height: 300px;
-left: 425px;
+
 position: relative;
 border: 8px ridge dimgray;
 }
@@ -17,8 +43,8 @@ background-image: url('background.jpg');
 }
 #cannon
 {
-width: 30px;
-height: 30px;
+width: 20px;
+height: 20px;
 position: absolute;
 top: 270px;
 left: 140px;
@@ -26,8 +52,8 @@ background-image: url('cannon.png');
 }
 #alien
 {
-width: 30px;
-height: 30px;
+width: 20px;
+height: 20px;
 position: absolute;
 top: 20px;
 left: 80px;
@@ -35,8 +61,8 @@ background-image: url('alien.png');
 }
 #missile
 {
-width: 20px;
-height: 20px;
+width: 10px;
+height: 10px;
 position: absolute;
 top: 240px;
 left: 145px;
