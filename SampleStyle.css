@@ -5,7 +5,7 @@ color: #008080;
 padding: 0px;
 margin: 0px;
 }
-p { color: #008080 } 
+p { color: #008080 /* Цвет текста */ } 
 
 #game
 {
